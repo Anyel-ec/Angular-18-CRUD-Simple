@@ -1,0 +1,133 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+  <!-- ID -->
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input
+      id="id"
+      type="text"
+      formControlName="id"
+      [class.invalid]="id?.invalid && (id?.untouched || id?.dirty)"
+    />
+    <div class="error-message" *ngIf="id?.hasError('required') && (id?.touched || id?.dirty)">
+      ID is required.
+    </div>
+    <div
+      class="error-message"
+      *ngIf="id?.hasError('minlength') && (id?.touched || id?.dirty)"
+    >
+      Minimum 3 characters.
+    </div>
+    <div
+      class="error-message"
+      *ngIf="id?.hasError('maxlength') && (id?.touched || id?.dirty)"
+    >
+      Maximum 10 characters.
+    </div>
+  </div>
+
+  <!-- Name -->
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input
+      id="name"
+      type="text"
+      formControlName="name"
+      [class.invalid]="name?.invalid && (name?.untouched || name?.dirty)"
+    />
+    <div
+      class="error-message"
+      *ngIf="name?.hasError('required') && (name?.touched || name?.dirty)"
+    >
+      Name is required.
+    </div>
+    <div
+      class="error-message"
+      *ngIf="name?.hasError('minlength') && (name?.touched || name?.dirty)"
+    >
+      Minimum 3 characters.
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea
+      id="description"
+      formControlName="description"
+      [class.invalid]="description?.invalid && (description?.untouched || description?.dirty)"
+    ></textarea>
+    <div
+      class="error-message"
+      *ngIf="description?.hasError('required') && (description?.touched || description?.dirty)"
+    >
+      Description is required.
+    </div>
+    <div
+      class="error-message"
+      *ngIf="description?.hasError('minlength') && (description?.touched || description?.dirty)"
+    >
+      Minimum 5 characters.
+    </div>
+  </div>
+
+  <!-- Logo -->
+  <div class="form-group">
+    <label for="logo">Logo URL</label>
+    <input
+      id="logo"
+      type="text"
+      formControlName="logo"
+      [class.invalid]="logo?.invalid && (logo?.untouched || logo?.dirty)"
+    />
+    <div
+      class="error-message"
+      *ngIf="logo?.hasError('required') && (logo?.touched || logo?.dirty)"
+    >
+      Logo URL is required.
+    </div>
+  </div>
+
+  <!-- Date Release -->
+  <div class="form-group">
+    <label for="date_release">Release Date</label>
+    <input
+      id="date_release"
+      type="date"
+      formControlName="date_release"
+      [class.invalid]="date_release?.invalid && (date_release?.untouched || date_release?.dirty)"
+    />
+    <div
+      class="error-message"
+      *ngIf="date_release?.hasError('required') && (date_release?.touched || date_release?.dirty)"
+    >
+      Release date is required.
+    </div>
+  </div>
+
+  <!-- Date Revision -->
+  <div class="form-group">
+    <label for="date_revision">Revision Date</label>
+    <input
+      id="date_revision"
+      type="date"
+      formControlName="date_revision"
+      [class.invalid]="date_revision?.invalid && (date_revision?.untouched || date_revision?.dirty)"
+    />
+    <div
+      class="error-message"
+      *ngIf="date_revision?.hasError('required') && (date_revision?.touched || date_revision?.dirty)"
+    >
+      Revision date is required.
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="form-actions">
+    <button type="submit" class="btn btn-submit">
+      Submit
+    </button>
+    <button type="button" class="btn btn-reset" (click)="onReset()">
+      Reset
+    </button>
+  </div>
+</form>

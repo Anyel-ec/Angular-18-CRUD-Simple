@@ -1,1 +1,16 @@
-<p>search-input works!</p>
+<div class="search-input-wrapper">
+  <input
+    type="text"
+    [(ngModel)]="query"
+    (keyup.enter)="onEnterKey()"
+    placeholder="Search..."
+    class="search-input"
+  />
+  <button
+    (click)="onEnterKey()"
+    class="search-button"
+    aria-label="Search"
+  >
+    🔍
+  </button>
+</div>

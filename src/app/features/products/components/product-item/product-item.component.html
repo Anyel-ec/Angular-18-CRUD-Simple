@@ -1,1 +1,11 @@
-<p>product-item works!</p>
+<tr>
+  <td><img ngSrc="product.logo" alt="{{ product.name }}" class="logo-cell" /></td>
+  <td>{{ product.name }}</td>
+  <td>{{ product.description }}</td>
+  <td>{{ product.date_release | date }}</td>
+  <td>{{ product.date_revision | date }}</td>
+  <td>
+    <button class="btn-edit" (click)="onEdit()">Edit</button>
+    <button class="btn-delete" (click)="onDelete()">Delete</button>
+  </td>
+</tr>

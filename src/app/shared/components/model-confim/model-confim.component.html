@@ -1,1 +1,12 @@
-<p>model-confim works!</p>
+<div class="modal-backdrop">
+  <div class="modal-content">
+    <!-- Mensaje de confirmación -->
+    <p class="modal-message">{{ message }}</p>
+
+    <!-- Botones de acción -->
+    <div class="modal-actions">
+      <button class="btn btn-cancel" (click)="onCancel()">Cancel</button>
+      <button class="btn btn-confirm" (click)="onConfirm()">Confirm</button>
+    </div>
+  </div>
+</div>

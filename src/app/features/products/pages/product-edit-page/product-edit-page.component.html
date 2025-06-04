@@ -1,1 +1,30 @@
-<p>product-edit-page works!</p>
+<div class="edit-page-container">
+  <h2>Edit Product</h2>
+
+  <!-- Si aún está cargando (llamada a getById) -->
+  <div *ngIf="isLoading" class="loading-indicator">
+    Loading product data...
+  </div>
+
+  <!-- Si no hay initialProduct (ej. ID inválido) -->
+  <div *ngIf="!isLoading && !initialProduct" class="error-message">
+    Product not found.
+  </div>
+
+  <!-- Si initialProduct existe, mostramos el formulario -->
+  <div *ngIf="initialProduct">
+    <div *ngIf="submitError" class="error-message">
+      {{ submitError }}
+    </div>
+
+    <!-- Pasamos initialProduct para que ProductFormComponent parche los valores y deshabilite el campo ID -->
+    <app-product-form
+      [initialProduct]="initialProduct"
+      (formSubmit)="onFormSubmit($event)"
+    ></app-product-form>
+
+    <div *ngIf="isSubmitting" class="submitting-indicator">
+      Saving changes...
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+/* Contenedor principal */
+.pagination-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Estilo del label */
+.pagination-label {
+  font-size: 0.9rem;
+  color: #333333;
+}
+
+/* Estilo del select */
+.pagination-select {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Opcional: cambiar color de fondo al enfocar */
+.pagination-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}

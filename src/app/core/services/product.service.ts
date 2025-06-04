@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-// Import environment to read the base URL
 import { environment } from '../../../environments/environment';
 
 import { Product } from '../models/product.model';

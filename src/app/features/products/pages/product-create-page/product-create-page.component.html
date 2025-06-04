@@ -1,1 +1,16 @@
-<p>product-create-page works!</p>
+<div class="create-page-container">
+  <h2>Create New Product</h2>
+
+  <!-- Mostrar mensaje de error si hubo problema -->
+  <div *ngIf="submitError" class="error-message">
+    {{ submitError }}
+  </div>
+
+  <!-- Incluir ProductFormComponent sin initialProduct (modo “create”) -->
+  <app-product-form (formSubmit)="onFormSubmit($event)"></app-product-form>
+
+  <!-- Opcional: mostrar un indicador de “loading” mientras se envía -->
+  <div *ngIf="isSubmitting" class="submitting-indicator">
+    Submitting...
+  </div>
+</div>

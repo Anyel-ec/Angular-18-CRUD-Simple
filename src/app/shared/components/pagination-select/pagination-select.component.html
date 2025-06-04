@@ -1,1 +1,16 @@
-<p>pagination-select works!</p>
+<div class="pagination-select-wrapper">
+  <label for="pageSizeSelect" class="pagination-label">Items per page:</label>
+  <select
+    id="pageSizeSelect"
+    [value]="selectedPageSize"
+    (change)="onPageSizeChange($event)"
+    class="pagination-select"
+  >
+    <option
+      *ngFor="let size of pageSizeOptions"
+      [value]="size"
+    >
+      {{ size }}
+    </option>
+  </select>
+</div>
